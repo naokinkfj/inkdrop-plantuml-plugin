@@ -1,5 +1,6 @@
 import React from 'react'
 import { render as renderUML } from '@shd101wyy/mume/out/src/puml'
+import markdownRenderer from 'inkdrop'
 
 class PlantUML extends React.Component {
   constructor (props) {
@@ -30,18 +31,14 @@ class PlantUML extends React.Component {
 
 module.exports = {
   activate () {
-    const { MDEPreview } = inkdrop.components.classes
-    if (MDEPreview) {
-      MDEPreview.remarkCodeComponents.plantuml = PlantUML
-      MDEPreview.remarkCodeComponents.puml = PlantUML
-    }
+    markdownRenderer.remarkCodeComponents['plantuml'] = PlantUML
+    markdownRendererremarkCodeComponents['puml'] = PlantUML
   },
 
   deactivate () {
-    const { MDEPreview } = inkdrop.components.classes
-    if (MDEPreview) {
-      MDEPreview.remarkCodeComponents.plantuml = null
-      MDEPreview.remarkCodeComponents.puml = null
+    if (markdownRenderer) {
+      markdownRenderer.remarkCodeComponents['plantuml'] = null
+      markdownRenderer.remarkCodeComponents['puml'] = null
     }
   }
 }
