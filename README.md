@@ -7,7 +7,7 @@ A plugin for drawing plantuml.
 To render anything other than sequence diagrams, you need to install graphviz.
 
 ```shell
-ipm install --production naokinkfj/inkdrop-plantuml-plugin
+ipm install --production syhily/inkdrop-plantuml-plugin
 brew install graphviz
 ```
 

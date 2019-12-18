@@ -32,7 +32,7 @@ class PlantUML extends React.Component {
 module.exports = {
   activate () {
     markdownRenderer.remarkCodeComponents['plantuml'] = PlantUML
-    markdownRendererremarkCodeComponents['puml'] = PlantUML
+    markdownRenderer.remarkCodeComponents["puml"] = PlantUML;
   },
 
   deactivate () {
